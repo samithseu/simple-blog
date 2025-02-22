@@ -33,7 +33,8 @@
                 <li class="{{ $name == 'home' ? 'active' : '' }} hover:text-green-500"><a href="/">Home</a>
                 </li>
                 <li class="{{ $name == 'about' ? 'active' : '' }} hover:text-green-500"><a href="/about">About</a></li>
-                <li class="{{ $name == 'blogs' ? 'active' : '' }} hover:text-green-500"><a href="/blogs">Blogs</a></li>
+                <li class="{{ $name == 'blogs' || $name == 'blog' ? 'active' : '' }} hover:text-green-500"><a
+                        href="/blogs">Blogs</a></li>
                 <li class="{{ $name == 'projects' ? 'active' : '' }} hover:text-green-500"><a
                         href="/projects">Projects</a></li>
                 <a class="bg-green-500 text-black px-3 py-1 rounded-lg hover:bg-green-700 font-semibold"
