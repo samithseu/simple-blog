@@ -2,7 +2,7 @@
 
 <x-layout>
     <x-section-title>Blogs</x-section-title>
-    <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-4">
         @foreach ($blogs as $blog)
             <div
                 class="flex flex-col gap-2 border rounded-xl border-green-500 p-4 bg-gradient-to-br hover:from-green-500/40 hover:to-transparent transition-all duration-300">
@@ -12,4 +12,5 @@
             </div>
         @endforeach
     </div>
+    {{ $blogs->links() }}
 </x-layout>
