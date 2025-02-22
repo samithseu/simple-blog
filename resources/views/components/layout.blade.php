@@ -26,17 +26,26 @@
 <body>
     <header class="sticky left-0 top-4 mt-4 px-4 lg:px-2 xl:px-0">
         <nav {{-- requestUri || pathInfo --}}
-            class="mx-auto flex w-full max-w-[1200px] flex-col items-center justify-between gap-6 rounded-2xl border border-[hsla(0,0%,100%,0.1)] bg-green-500/5 p-6 shadow-[0_-1px_0_1px] shadow-green-500/30 backdrop-blur-lg md:flex-row">
-            <a href="/" class="z-20 text-2xl font-bold"><span class="text-green-500">Jroch</span>App</a>
-            <ul class="z-20 flex flex-wrap items-center gap-6 justify-center *:transition *:duration-200">
+            class="mx-auto flex w-full max-w-[1200px] flex-col items-center justify-between rounded-2xl border border-[hsla(0,0%,100%,0.1)] bg-green-500/5 p-6 shadow-[0_-1px_0_1px] shadow-green-500/30 backdrop-blur-lg md:flex-row">
+            <a href="{{ route('home') }}" class="z-20 text-2xl font-bold">
+                <span class="text-green-500">Jroch</span>App
+            </a>
+            <ul
+                class="z-20 flex flex-wrap items-center gap-4 justify-center *:transition *:duration-200 *:font-semibold">
                 <?php $name = Route::currentRouteName(); ?>
-                <li class="{{ $name == 'home' ? 'active' : '' }} hover:text-green-500"><a href="/">Home</a>
+                <li class="{{ $name == 'home' ? 'active' : '' }} hover:text-green-500">
+                    <a href="{{ route('home') }}">Home</a>
                 </li>
-                <li class="{{ $name == 'about' ? 'active' : '' }} hover:text-green-500"><a href="/about">About</a></li>
-                <li class="{{ $name == 'blogs' || $name == 'blog.show' ? 'active' : '' }} hover:text-green-500"><a
-                        href="/blogs">Blogs</a></li>
-                <li class="{{ $name == 'projects' ? 'active' : '' }} hover:text-green-500"><a
-                        href="/projects">Projects</a></li>
+                <li class="{{ $name == 'about' ? 'active' : '' }} hover:text-green-500">
+                    <a href="{{ route('about') }}">About</a>
+                </li>
+                <li class="{{ $name == 'blogs' || $name == 'blog.show' ? 'active' : '' }} hover:text-green-500">
+                    <a href="{{ route('blogs') }}">Blogs</a>
+                </li>
+                <li class="{{ $name == 'projects' ? 'active' : '' }} hover:text-green-500">
+                    <a href="{{ route('projects') }}">Projects</a>
+                </li>
+                {{-- Login Button --}}
                 {{-- <a class="bg-green-500 text-black px-3 py-1 rounded-lg hover:bg-green-700 font-semibold"
                     href="/login">Login
                 </a> --}}
