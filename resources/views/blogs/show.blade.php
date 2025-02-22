@@ -1,7 +1,7 @@
 @section('title', 'Blog ' . $blog->id)
 
 <x-layout>
-    <a href="/blogs"
+    <a href="{{ url()->previous() }}"
         class="w-max mt-8 mb-4 border rounded-lg px-4 py-1 border-green-500 transition-all duration-200 hover:bg-green-500 hover:text-black font-semibold flex items-center gap-1">
         {{-- left arrow svg --}}
         <svg xmlns="http://www.w3.org/2000/svg" class="size-[1em]" viewBox="0 0 24 24">
