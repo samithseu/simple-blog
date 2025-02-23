@@ -45,10 +45,14 @@
                 <li class="{{ $name == 'projects' ? 'active' : '' }} hover:text-green-500">
                     <a href="{{ route('projects') }}">Projects</a>
                 </li>
+                {{-- Register Button --}}
+                <a class="bg-green-500 text-black px-3 py-1 rounded-lg hover:bg-green-700 font-semibold"
+                    href="{{ route('auth.show.register') }}">Register
+                </a>
                 {{-- Login Button --}}
-                {{-- <a class="bg-green-500 text-black px-3 py-1 rounded-lg hover:bg-green-700 font-semibold"
-                    href="/login">Login
-                </a> --}}
+                <a class="bg-transparent border border-green-500 px-3 py-1 rounded-lg hover:bg-green-700 font-semibold text-green-500 hover:text-black"
+                    href="{{ route('auth.show.login') }}">Login
+                </a>
             </ul>
         </nav>
     </header>
