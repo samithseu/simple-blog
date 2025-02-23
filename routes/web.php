@@ -20,14 +20,18 @@ Route::get('/projects', function () {
 })->name("projects");
 
 // auth
-Route::get('/register', [AuthController::class, "showRegister"])->name("auth.show.register");
-Route::post('/register', [AuthController::class, "register"])->name("auth.register");
-Route::get('/login', [AuthController::class, "showLogin"])->name("auth.show.login");
-Route::post('/login', [AuthController::class, "login"])->name("auth.login");
 Route::post('/logout', [AuthController::class, "logout"])->name("auth.logout");
+Route::middleware("guest")->controller(AuthController::class)->group(function () {
+    Route::get('/register', "showRegister")->name("auth.show.register");
+    Route::post('/register', "register")->name("auth.register");
+    Route::get('/login', "showLogin")->name("auth.show.login");
+    Route::post('/login', "login")->name("auth.login");
+});
 
 // blogs
-Route::get('/blogs', [BlogController::class, "index"])->name("blogs");
-Route::get('/blogs/create', [BlogController::class, "create"])->name("blog.create");
-Route::get('/blogs/{blog}', [BlogController::class, "show"])->name("blog.show");
+Route::middleware("auth")->controller(BlogController::class)->group(function () {
+    Route::get('/blogs', "index")->name("blogs");
+    Route::get('/blogs/create', "create")->name("blog.create");
+    Route::get('/blogs/{blog}', "show")->name("blog.show");
+});
 
