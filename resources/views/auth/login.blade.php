@@ -2,6 +2,8 @@
 
 <x-layout>
     <x-section-title>Login to your account!</x-section-title>
+    <x-error :error="$errors" />
+
     <form action="{{ route('auth.login') }}" method="POST" class="w-full grid grid-cols-1 gap-6">
         @csrf
         <input class="px-4 py-2 rounded-lg text-lg" type="email" name="email" id="email" required

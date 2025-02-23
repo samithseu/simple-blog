@@ -2,6 +2,8 @@
 
 <x-layout>
     <x-section-title>Register New Account!</x-section-title>
+    <x-error :error="$errors" />
+
     <form action="{{ route('auth.register') }}" method="POST" class="w-full grid grid-cols-1 gap-6">
         @csrf
         <input class="px-4 py-2 rounded-lg text-lg" type="text" name="name" id="name" required

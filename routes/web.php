@@ -24,6 +24,7 @@ Route::get('/register', [AuthController::class, "showRegister"])->name("auth.sho
 Route::post('/register', [AuthController::class, "register"])->name("auth.register");
 Route::get('/login', [AuthController::class, "showLogin"])->name("auth.show.login");
 Route::post('/login', [AuthController::class, "login"])->name("auth.login");
+Route::post('/logout', [AuthController::class, "logout"])->name("auth.logout");
 
 // blogs
 Route::get('/blogs', [BlogController::class, "index"])->name("blogs");
