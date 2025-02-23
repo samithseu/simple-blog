@@ -32,6 +32,11 @@
             </a>
             <ul
                 class="z-20 flex flex-wrap items-center gap-4 justify-center *:transition *:duration-200 *:font-semibold">
+                {{-- greeting user --}}
+                @auth
+                    <li class="border-r border-green-500/20 pr-4">Hello, {{ Auth::user()->name }}!</li>
+                @endauth
+                {{-- route links --}}
                 <?php $name = Route::currentRouteName(); ?>
                 <li class="{{ $name == 'home' ? 'active' : '' }} hover:text-green-500">
                     <a href="{{ route('home') }}">Home</a>
@@ -47,15 +52,17 @@
                 </li>
 
 
-                {{-- Logout Button --}}
-                @if (Auth::check())
+                @auth
+                    {{-- Logout Button --}}
                     <form class="w-max h-max" action="{{ route('auth.logout') }}" method="POST">
                         @csrf
                         <button
                             class="bg-transparent border border-green-500 px-3 py-1 rounded-lg hover:bg-green-700 font-semibold text-green-500 hover:text-black"
                             type="submit">Logout</button>
                     </form>
-                @else
+                @endauth
+
+                @guest
                     {{-- Register Button --}}
                     <a class="bg-green-500 text-black px-3 py-1 rounded-lg hover:bg-green-700 font-semibold"
                         href="{{ route('auth.show.register') }}">Register
@@ -64,7 +71,7 @@
                     <a class="bg-transparent border border-green-500 px-3 py-1 rounded-lg hover:bg-green-700 font-semibold text-green-500 hover:text-black"
                         href="{{ route('auth.show.login') }}">Login
                     </a>
-                @endif
+                @endguest
             </ul>
         </nav>
     </header>
