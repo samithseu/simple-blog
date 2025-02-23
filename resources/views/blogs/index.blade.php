@@ -6,7 +6,7 @@
         @foreach ($blogs as $blog)
             <div
                 class="flex flex-col gap-2 border rounded-xl border-green-500/30 p-4 bg-gradient-to-br hover:from-green-500/30 hover:to-transparent transition-all duration-300">
-                <a href="{{ route('blog.show', $blog->id) }}"
+                <a href="{{ route('blog.show', $blog) }}"
                     class="text-xl font-bold line-clamp-1 mb-2">{{ $blog->title }}</a>
                 <p class="text-sm text-gray-500 line-clamp-2">{{ $blog->body }}</p>
             </div>

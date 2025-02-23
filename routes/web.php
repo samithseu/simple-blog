@@ -17,5 +17,5 @@ Route::get('/projects', function () {
 
 Route::get('/blogs', [BlogController::class, "index"])->name("blogs");
 Route::get('/blogs/create', [BlogController::class, "create"])->name("blog.create");
-Route::get('/blogs/{id}', [BlogController::class, "show"])->name("blog.show");
+Route::get('/blogs/{blog}', [BlogController::class, "show"])->name("blog.show");
 
