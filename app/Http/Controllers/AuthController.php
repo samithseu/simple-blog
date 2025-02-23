@@ -10,7 +10,15 @@ class AuthController extends Controller
         return view('auth.register');
     }
 
+    public function register(Request $request) {
+        return redirect()->route('home');
+    }
+
     public function showLogin() {
         return view('auth.login');
+    }
+
+    public function login(Request $request) {
+        return redirect()->route('home');
     }
 }
