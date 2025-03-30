@@ -18,11 +18,19 @@ class BlogController extends Controller
     }
 
     public function create() {
-
+        return view('blogs.create');
     }
 
-    public function store() {
+    public function store(Request $request) {
+        $validated = $request->validate([
+            "title" => "required|string|max:75",
+            "body" => "required|string",
+        ]);
 
+        $blog = Blog::create($validated);
+        $blog->save();
+        session()->flash('success', 'Blog created successfully!');
+        return redirect()->route('blogs');
     }
 
     public function edit($id) {
@@ -33,7 +41,9 @@ class BlogController extends Controller
 
     }
 
-    public function destroy($id) {
-
+    public function destroy(Blog $blog) {
+        $blog->delete();
+        session()->flash('success', 'Blog deleted successfully!');
+        return redirect()->route('blogs');
     }
 }
