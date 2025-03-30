@@ -8,7 +8,7 @@
     <meta property="og:title" content="Jroch App - Simple Blogs App" />
     <meta name="description" content="A little Laravel application created for storing blogs." />
     <meta property="og:description" content="A little Laravel application created for storing blogs." />
-    <meta property="og:image" content="{{ public_path('sample-og-img.png') }}" />
+    <meta property="og:image" content="{{ asset('sample-og-img.png') }}" />
 
     <title>
         @hasSection('title')
