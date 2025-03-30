@@ -4,7 +4,7 @@
 
 html {
     /* for dark and light mode */
-    color-scheme: dark light;
+    color-scheme: dark;
     scrollbar-gutter: stable;
 }
 .active {
