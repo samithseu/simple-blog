@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta property="og:title" content="Jroch App - Simple Blogs App" />
+    <meta name="description" content="A little Laravel application created for storing blogs." />
+    <meta property="og:description" content="A little Laravel application created for storing blogs." />
+    <meta property="og:image" content="{{ public_path('sample-og-img.png') }}" />
+
     <title>
         @hasSection('title')
             Jroch App - @yield('title')
