@@ -14,4 +14,12 @@
         <span class="text-green-500">{{ $blog->title }}</span>
     </h2>
     <p class="font-normal text-gray-400 text-lg">{{ $blog->body }}</p>
+    {{-- add delete button --}}
+    <form action="{{ route('blog.destroy', $blog->id) }}" method="POST" class="mt-2 w-fit h-fit">
+        @csrf
+        @method('DELETE')
+        <button
+            class="px-4 py-1 rounded-lg border border-red-500 bg-red-500/10 text-sm text-red-500 hover:bg-red-500 hover:text-white font-bold transition-all duration-200"
+            type="submit">Delete</button>
+    </form>
 </x-layout>
