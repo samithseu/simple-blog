@@ -47,9 +47,6 @@
                 <li class="{{ $name == 'blogs' || $name == 'blog.show' ? 'active' : '' }} hover:text-green-500">
                     <a href="{{ route('blogs') }}">Blogs</a>
                 </li>
-                <li class="{{ $name == 'projects' ? 'active' : '' }} hover:text-green-500">
-                    <a href="{{ route('projects') }}">Projects</a>
-                </li>
 
 
                 @auth
