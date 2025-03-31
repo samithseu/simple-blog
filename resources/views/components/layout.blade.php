@@ -65,12 +65,8 @@
                 @endauth
 
                 @guest
-                    {{-- Register Button --}}
-                    <a class="bg-green-500 text-black px-3 py-1 rounded-lg hover:bg-green-700 font-semibold"
-                        href="{{ route('auth.show.register') }}">Register
-                    </a>
                     {{-- Login Button --}}
-                    <a class="bg-transparent border border-green-500 px-3 py-1 rounded-lg hover:bg-green-700 font-semibold text-green-500 hover:text-black"
+                    <a class="bg-green-500 text-black px-3 py-1 rounded-lg hover:bg-green-700 font-semibold"
                         href="{{ route('auth.show.login') }}">Login
                     </a>
                 @endguest
