@@ -22,6 +22,7 @@ class AuthController extends Controller
 
         $user = User::create($validated);
         Auth::login($user);
+        session()->flash('success', 'Yo wassup, Welcome!');
         return redirect()->route('blogs');
     }
 
@@ -37,7 +38,8 @@ class AuthController extends Controller
 
         if (Auth::attempt($validated)) {
             $request->session()->regenerate();
-            return redirect()->route('home');
+            session()->flash('success', 'Yo wassup, Welcome!');
+            return redirect()->route('blogs');
         }
 
         throw ValidationException::withMessages([
@@ -51,6 +53,7 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+        session()->flash('success', 'Bye, See ya later! 👋');
         return redirect()->route('auth.show.login');
     }
 }

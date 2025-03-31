@@ -1,6 +1,10 @@
 @section('title', 'Login')
 
 <x-layout>
+    @if (session('success'))
+        <x-session-message>{{ session('success') }}</x-session-message>
+    @endif
+
     <x-section-title>Login to your account!</x-section-title>
     <x-error :error="$errors" />
 
