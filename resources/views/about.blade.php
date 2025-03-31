@@ -16,6 +16,8 @@
             management seamless. The application includes routes, controllers, and views to handle user requests and
             display
             information dynamically. Laravel’s built-in validation and middleware ensure data integrity and security.
+            This app is being deployed on <a href="https://cloud.laravel.com/" target="_blank"
+                title="Laravel Cloud">Laravel Cloud</a>, so your data are stored there.
             Developed by <a href="https://t.me/samithseu" target="_blank" title="Samith's Telegram">@samithseu</a></p>
     </div>
 </x-layout>

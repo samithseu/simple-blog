@@ -29,7 +29,7 @@
         <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-4">
             @foreach ($blogs as $blog)
                 <a href="{{ route('blog.show', $blog) }}"
-                    class="group flex flex-col gap-2 border rounded-xl border-green-500/30 p-4 transition-all duration-200 hover:bg-green-500/30 hover:scale-[1.05]">
+                    class="backdrop-blur-[2px] group flex flex-col gap-2 border rounded-xl border-green-500/30 p-4 transition-all duration-200 hover:bg-green-500/30 hover:scale-[1.05]">
                     <span class="text-xl font-bold line-clamp-1 mb-2">{{ $blog->title }}</span>
                     <span
                         class="text-sm text-gray-500 line-clamp-2 group-hover:text-zinc-300 transition-all duration-200">{{ $blog->body }}
