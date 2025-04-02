@@ -31,7 +31,7 @@
 <body>
     <header class="sticky left-0 top-4 mt-4 px-4 lg:px-2 xl:px-0">
         <nav {{-- requestUri || pathInfo --}}
-            class="mx-auto flex w-full max-w-[1200px] flex-col items-center justify-between rounded-2xl border border-[hsla(0,0%,100%,0.1)] bg-green-500/5 p-6 shadow-[0_-1px_0_1px] shadow-green-500/30 backdrop-blur-lg md:flex-row">
+            class="mx-auto flex w-full max-w-[1200px] flex-col items-center justify-between rounded-2xl border border-[rgba(0,201,80,0.1)] bg-green-500/5 p-6 shadow-[0_-1px_0_1px] shadow-green-500/30 backdrop-blur-lg md:flex-row">
             <a href="{{ route('home') }}" class="z-20 text-2xl font-bold">
                 <span class="text-green-500">Jroch</span>App
             </a>
