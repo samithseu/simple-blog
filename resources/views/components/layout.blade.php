@@ -8,7 +8,7 @@
     <meta property="og:title" content="Jroch App - Simple Blogs App" />
     <meta name="description" content="A little Laravel application created for storing blogs." />
     <meta property="og:description" content="A little Laravel application created for storing blogs." />
-    <meta property="og:image" content="{{ asset('sample-og-img.png') }}" />
+    <meta property="og:image" content="{{ secure_asset('sample-og-img.png') }}" />
 
     <title>
         @hasSection('title')
@@ -20,7 +20,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-    <link rel="shortcut icon" href="{{ asset('favicon.svg') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ secure_asset('favicon.svg') }}" type="image/x-icon">
 
     {{-- style --}}
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
